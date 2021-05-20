@@ -1,15 +1,17 @@
-ixbitz.com {
-    reload 300s
-    hosts /etc/coredns/host_files/ixbitz.com.hosts
+.:53 {
+    cache
     errors
     log
-}
-
-. {
     any
-    forward . 8.8.8.8 {
+    forward . 1.1.1.1 {
         except ixbitz.com
     }
+}
+
+ixbitz.com:53 {
+    cache
     errors
     log
+    reload 300s
+    hosts /etc/coredns/host_files/ixbitz.com.hosts
 }
