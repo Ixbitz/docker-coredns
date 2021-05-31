@@ -1,4 +1,4 @@
-FROM coredns/coredns:1.7.0
+FROM --platform=linux/arm64 coredns/coredns:latest
   
 LABEL maintainer="Burke Azbill"
 
